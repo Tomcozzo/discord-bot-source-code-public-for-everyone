@@ -1,20 +1,41 @@
-const config = require("./config/config.json")
+const config = require("./config/config.js")
+
+
+const { GatewayIntentBits, Collection } = require("discord.js")
 
 
 const Discord = require("discord.js")
-const client = new Discord.Client({ 
-    intents: [
-        "GUILDS",
-        "GUILD_MESSAGES"
+const client = new Discord.Client({
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.DirectMessages,
+	],
+});
 
-]})
 
-const prefix = "!"
+client.events = new Collection();
+client.messageCmds = new Collection();
+client.slashCmds = new Collection();
 
-client.on("messageCreate", message => {
-    if(message.content === prefix + "help") {
-        message.channel.send("this is coming soon!")
-    }
+module.exports = client;
+
+[
+    'events',
+    'messagecommands',
+    'slashcommands'
+].forEach((file) => {
+    require(`./functions/handlers/${file}`)(client)
 })
 
-client.login(" your token here ")
+
+
+
+
+
+client.login(config.bottoken.token).catch((err) => {
+    console.log(`[CLIENT] - coud not log into the bot check your token and try again.\n${err}`);
+  });
