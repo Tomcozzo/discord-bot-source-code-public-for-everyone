@@ -12,3 +12,6 @@ this bot is still been tested on so please do not use.
 no i didnt skid it💀 
 
 officially made by me
+
+
+i already have finished some new moderation and some new commands but they are just not inside of this respitory yet as i dont want people getting annoyed that they arent working. we have a dev team hoping to add some new stuff by the end of the week
