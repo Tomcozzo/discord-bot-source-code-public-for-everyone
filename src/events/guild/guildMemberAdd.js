@@ -1,13 +1,21 @@
 const { welcomeImage } = require('ultrax');
+const {Events} = require('discord.js');
 
-client.on('guildMemberAdd', async member => {
+const canvas = require("canvas")
+
+
+
+
+module.exports = {
+  name: Events.GuildMemberAdd,
+  async execute(client, message,  member, user, GuildMember ) {
   const bg = 'https://imgur.com/okIR1iY.png';
-  const avatar = member.user.displayAvatarURL({ format: "png" });
+  const avatar = GuildMember.displayAvatarURL()({ format: "png" });
   const title = "welcome";
-  const subtitle = member.user.tag;
-  const footer = `Youre the ${member.guild.memberCount}th member`;
+  const subtitle = GuildMember.tag;
+  const footer = `Youre the ${GuildMember.guild.memberCount}th member`;
   const color = '#ffffff';
-  const channel = member.guild.channels.cache.get('716220553391767569')
+  const channel = GuildMember.guild.channels.cache.get('1074361710753878036')
   const options = {
     font: "sans-serif",
     attachmentName: `welcome-${member.id}`,
@@ -19,4 +27,5 @@ client.on('guildMemberAdd', async member => {
   const image = await welcomeImage(bg, avatar, title, subtitle, footer, color, options);
 
   channel.send({ files: [image] });
-});
+}
+}

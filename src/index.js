@@ -31,7 +31,7 @@ module.exports = client;
     require(`./functions/handlers/${file}`)(client)
 })
 
-require(`./`)
+
 
 
 
