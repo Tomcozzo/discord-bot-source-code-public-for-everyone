@@ -8,16 +8,13 @@ This will soon have a mongodb database and alot more
 
 this bot is still been tested on so please do not use.
 
-<<<<<<< HEAD
+
 no i didnt skid it💀
 
 officially made by me
 
-=======
+
 no i didnt skid it💀 
 
 officially made by me
 
-
->>>>>>> 0e2c18a1732b7f6edb53fa7ba1b5f61d4727ee9c
-i already have finished some new moderation and some new commands but they are just not inside of this respitory yet as i dont want people getting annoyed that they arent working. we have a dev team hoping to add some new stuff by the end of the week
