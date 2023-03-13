@@ -3,7 +3,7 @@ module.exports = {
         prefix: 'y!',
     },
     bottoken: {
-        token: "MTA4MjM1OTIzMTg0MTMyNTEwNw.G02bvG.N-YRl3DNzHP91Db0PhZoBo51LcfXv_biNJqoYw",
+        token: "",
     },
     important: {
         clientId: '1082359231841325107',
